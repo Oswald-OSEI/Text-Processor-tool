@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="861.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textprocessor.textprocessor.TextProcessorController">
+    <children>
+        <SplitPane layoutX="11.0" layoutY="12.0" prefHeight="513.0" prefWidth="396.0">
+            <items>
+                <SplitPane dividerPositions="0.10304532577903684" orientation="VERTICAL" prefHeight="484.0" prefWidth="394.0">
+                    <items>
+                        <AnchorPane fx:id="SearchBar" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                            <children>
+                                <TextField fx:id="KeyWordPane" layoutX="14.0" layoutY="15.0" opacity="0.83" prefHeight="26.0" prefWidth="297.0" promptText="keyword (Enter text to search or replace here)" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="443.0" prefWidth="389.0">
+                            <children>
+                                <TextArea fx:id="TextBox" layoutX="4.0" layoutY="3.0" prefHeight="450.0" prefWidth="388.0" wrapText="true" />
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </items>
+        </SplitPane>
+        <HBox layoutX="12.0" layoutY="530.0" prefHeight="50.0" prefWidth="394.0">
+            <children>
+                <Button fx:id="SearchButton" mnemonicParsing="false" onAction="#handleSearch" prefHeight="44.0" prefWidth="94.0" text="Search">
+                    <HBox.margin>
+                        <Insets bottom="3.0" right="2.0" top="3.0" />
+                    </HBox.margin>
+                </Button>
+                <TextField fx:id="ReplacedText" prefHeight="43.0" prefWidth="198.0" promptText="Replace with">
+                    <HBox.margin>
+                        <Insets left="20.0" top="3.0" />
+                    </HBox.margin>
+                </TextField>
+                <Button fx:id="ReplaceButton" mnemonicParsing="false" opacity="0.55" prefHeight="44.0" prefWidth="72.0" text="Replace" onAction="#handleReplace">
+                    <HBox.margin>
+                        <Insets top="2.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+        <TextFlow fx:id="ActionPane" layoutX="414.0" layoutY="14.0" prefHeight="50.0" prefWidth="434.0" />
+        <ScrollPane fx:id="ResultsScrollPane" layoutX="414.0" layoutY="76.0" prefHeight="450.0" prefWidth="444.0">
+            <content>
+                <TextFlow fx:id="ResultsPane" prefHeight="446.0" prefWidth="440.0" />
+            </content>
+        </ScrollPane>
+        <Button fx:id="PreviousButton" layoutX="414.0" layoutY="529.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="125.0" text="Previous "  onAction="#handlePrevious"/>
+        <Button fx:id="nextButton" layoutX="549.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleNext" prefHeight="43.0" prefWidth="104.0" text="Next" />
+        <Button fx:id="DeleteButton" layoutX="710.0" layoutY="529.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="146.0" text="Delete"  onAction="#handleDelete"/>
+    </children>
+</AnchorPane>
