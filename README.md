@@ -13,6 +13,7 @@ This is a Java-based text processing tool built with JavaFX for the graphical us
 3. **History Tracking**: The application maintains a history of search and replacement operations using a linked list. Users can navigate through this history.
 4. **Next/Previous Navigation**: Users can navigate to the next and previous search/replacement results.
 5. **Delete Operation**: Users can delete specific history entries.
+6. **Clear Fields** : Users can clear entry fields when the want to make new entries
 
 ## Requirements
 
@@ -69,11 +70,15 @@ cd text-processing-tool
 4. **Delete History Entry**:
    - Click the `Delete` button to delete the current history entry.
 
+5. **Clear Entry Fields**:
+   - Click the `Clear Fields` button to clear entry.
+
 ## Code Structure
 
 - **Main.java**: Entry point of the application.
 - **TextProcessorController.java**: Controller class handling the UI interactions.
-- **TextInput.java**: Class containing the logic for searching and replacing text, as well as managing the linked list for history tracking.
+- **TextInput.java**: Class containing the logic for searching and replacing text.
+- **DataManager.java**: Class containing the logic for handling data retrieval from arraylist and linkedlist
 
 ## Contributing
 
